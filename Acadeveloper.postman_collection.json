@@ -1,0 +1,1166 @@
+{
+	"info": {
+		"_postman_id": "a85228e6-4f83-4df7-b2a4-83e3d103f297",
+		"name": "Acadeveloper",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46883121",
+		"_collection_link": "https://jhonatan-6358048.postman.co/workspace/b19a9d28-00cb-45be-8ebe-08c308538726/collection/46883121-a85228e6-4f83-4df7-b2a4-83e3d103f297?action=share&source=collection_link&creator=46883121"
+	},
+	"item": [
+		{
+			"name": "CRUD: Developer & Developer Info",
+			"item": [
+				{
+					"name": "POST /developers",
+					"item": [
+						{
+							"name": "Success 201: Developer 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"ugo@mail.com.br\",\n\t\"name\": \"Ugo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/developers",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"developers"
+									]
+								},
+								"description": "# Descrição\n\n* O objeto deve ser criado.\n* O status code deve ser **201 CREATED**.\n* O retorno deve ser:\n\n```json\n{\n\t\"id\": 1,\n\t\"name\": \"Ugo\",\n\t\"email\": \"ugo@kenzie.com.br\"\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Success 201: Developer 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Kenzinho\",\n\t\"email\": \"kenzinho@devmail.com.br\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/developers",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"developers"
+									]
+								},
+								"description": "# Descrição\n\n* O objeto deve ser criado.\n* O status code deve ser **201 CREATED**.\n* O retorno deve ser:\n\n```json\n{\n\t\"id\": 2,\n\t\"name\": \"Kenzinho\",\n\t\"email\": \"kenzinho@kenzie.com.br\"\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Success 201: Developer To Delete",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"To Delete\",\n\t\"email\": \"todelete@mail.com.br\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/developers",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"developers"
+									]
+								},
+								"description": "# Descrição\n\n* O objeto deve ser criado.\n* O status code deve ser **201 CREATED**.\n* O retorno deve ser:\n\n```json\n{\n\t\"id\": 3,\n\t\"name\": \"To Delete\",\n\t\"email\": \"todelete@kenzie.com.br\"\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Error 409: E-mail já cadastrado",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"ugo@mail.com.br\",\n\t\"name\": \"Ugo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/developers",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"developers"
+									]
+								},
+								"description": "# Descrição\n\n* O objeto não deve ser criado.\n* O status code deve ser **409 CONFLICT**.\n* O retorno deve ser:\n\n```json\n{\n\t\"message\": \"Email already exists.\"\n}\n```"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GET /developers/:id",
+					"item": [
+						{
+							"name": "Success 200: Developer 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ _.baseUrl }}/developers/1",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"developers",
+										"1"
+									]
+								},
+								"description": "# Descrição\n\n* O *developer* deve ser retornado.\n* O status code deve ser **200 OK**.\n* O retorno deve ser:\n\n```json\n{\n\t\"developerId\": 1,\n\t\"developerName\": \"Ugo\",\n\t\"developerEmail\": \"ugo@kenzie.com.br\",\n\t\"developerInfoDeveloperSince\": null,\n\t\"developerInfoPreferredOS\": null\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Error 404: ID não existe",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ _.baseUrl }}/developers/999",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"developers",
+										"999"
+									]
+								},
+								"description": "# Descrição\n\n* O *developer* não deve ser retornado.\n* O status code deve ser **404 NOT FOUND**.\n* O retorno deve ser:\n\n```json\n{\n\t\"message\": \"Developer not found.\"\n}\n```"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PATCH /developers/:id",
+					"item": [
+						{
+							"name": "Success 200: Developer 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"ugo.roveda@kenzie.com.br\",\n\t\"name\": \"Ugo Roveda\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/developers/1",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"developers",
+										"1"
+									]
+								},
+								"description": "# Descrição\n\n* O *developer* deve ser atualizado.\n* O status code deve ser **200 OK**.\n* O retorno deve ser:\n\n```json\n{\n\t\"id\": 1,\n\t\"name\": \"Ugo Roveda\",\n\t\"email\": \"ugo.roveda@kenzie.com.br\"\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Error 409: E-mail já cadastrado",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"ugo.roveda@mail.com.br\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/developers/1",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"developers",
+										"1"
+									]
+								},
+								"description": "# Descrição\n\n* O *developer* não deve ser atualizado.\n* O status code deve ser **409 CONFLICT**.\n* O retorno deve ser:\n\n```json\n{\n\t\"message\": \"Email already exists.\"\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Error 404: ID não existe",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"mr.dev@mail.com.br\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/developers/999",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"developers",
+										"999"
+									]
+								},
+								"description": "# Descrição\n\n* O *developer* não deve ser atualizado.\n* O status code deve ser **404 NOT FOUND**.\n* O retorno deve ser:\n\n```json\n{\n\t\"message\": \"Developer not found.\"\n}\n```"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE /developers/:id",
+					"item": [
+						{
+							"name": "Success 204: Developer To Delete",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{ _.baseUrl }}/developers/3",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"developers",
+										"3"
+									]
+								},
+								"description": "# Descrição\n\n* O objeto deve ser deletado.\n* O status code deve ser **204 NO CONTENT**.\n* Sem retorno."
+							},
+							"response": []
+						},
+						{
+							"name": "Error 404: ID não existe",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{ _.baseUrl }}/developers/999",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"developers",
+										"999"
+									]
+								},
+								"description": "# Descrição\n\n* O *developer* não deve ser deletado.\n* O status code deve ser **404 NOT FOUND**.\n* O retorno deve ser:\n\n```json\n{\n\t\"message\": \"Developer not found.\"\n}\n```"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST /developers/:id/infos",
+					"item": [
+						{
+							"name": "Success 201: To Developer 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"developerSince\": \"2023-01-02\",\n\t\"preferredOS\": \"MacOS\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/developers/1/infos",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"developers",
+										"1",
+										"infos"
+									]
+								},
+								"description": "# Descrição\n\n* O objeto deve ser criado.\n* O status code deve ser **201 CREATED**.\n* O retorno deve ser:\n\n```json\n{\n\t\"id\": 1,\n\t\"developerSince\": \"2023-01-02T03:00:00.000Z\",\n\t\"preferredOS\": \"MacOS\",\n\t\"developerId\": 1\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Success 201: To Developer 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"developerSince\": \"2022-01-02\",\n\t\"preferredOS\": \"Windows\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/developers/2/infos",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"developers",
+										"2",
+										"infos"
+									]
+								},
+								"description": "# Descrição\n\n* O objeto deve ser criado.\n* O status code deve ser **201 CREATED**.\n* O retorno deve ser:\n\n```json\n{\n\t\"id\": 2,\n\t\"developerSince\": \"2022-01-02T03:00:00.000Z\",\n\t\"preferredOS\": \"Windows\",\n\t\"developerId\": 2\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Error 409: Informação já existe",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"developerSince\": \"2023-01-02\",\n\t\"preferredOS\": \"Windows\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/developers/1/infos",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"developers",
+										"1",
+										"infos"
+									]
+								},
+								"description": "# Descrição\n\n* O objeto não deve ser criado.\n* O status code deve ser **409 CONFLICT**.\n* O retorno deve ser:\n\n```json\n{\n    \"message\": \"Developer infos already exists.\"\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Error 404: ID não existe",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"developerSince\": \"2023-01-02\",\n\t\"preferredOS\": \"Windows\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/developers/999/infos",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"developers",
+										"999",
+										"infos"
+									]
+								},
+								"description": "# Descrição\n\n* O objeto não deve ser criado.\n* O status code deve ser **404 NOT FOUND**.\n* O retorno deve ser:\n\n```json\n{\n   \"message\": \"Developer not found.\"\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Error 400: OS inválida",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"developerSince\": \"2023-01-02\",\n\t\"preferredOS\": \"Other OS\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/developers/1/infos",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"developers",
+										"1",
+										"infos"
+									]
+								},
+								"description": "# Descrição\n\n* O objeto não deve ser criado.\n* O status code deve ser **400 BAD REQUEST**.\n* O retorno deve ser:\n\n```json\n{\n\t\"message\": \"Invalid OS option.\"\n}\n```"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CRUD: Project",
+			"item": [
+				{
+					"name": "POST /projects",
+					"item": [
+						{
+							"name": "Success 201: Project 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Project 1\",\n\t\"description\": \"Projeto backend\",\n\t\"repository\": \"url.com.br\",\n\t\"startDate\": \"2022-12-01\",\n\t\"developerId\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/projects",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"projects"
+									]
+								},
+								"description": "# Descrição\n\n* O objeto deve ser criado.\n* O status code deve ser **201 CREATED**.\n* O retorno deve ser:\n\n```json\n{\n\t\"id\": 1,\n\t\"name\": \"Project 1\",\n\t\"description\": \"Projeto backend\",\n\t\"repository\": \"url.com.br\",\n\t\"startDate\": \"2022-12-01T03:00:00.000Z\",\n\t\"endDate\": null,\n\t\"developerId\": 1\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Success 201: Project 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Project 2\",\n\t\"description\": \"Projeto backend\",\n\t\"repository\": \"url.com.br\",\n\t\"startDate\": \"2022-12-01\",\n\t\"endDate\": \"2023-01-01\",\n\t\"developerId\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/projects",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"projects"
+									]
+								},
+								"description": "# Descrição\n\n* O objeto deve ser criado.\n* O status code deve ser **201 CREATED**.\n* O retorno deve ser:\n\n```json\n{\n\t\"id\": 2,\n\t\"name\": \"Project 2\",\n\t\"description\": \"Projeto backend\",\n\t\"repository\": \"url.com.br\",\n\t\"startDate\": \"2022-12-01T03:00:00.000Z\",\n\t\"endDate\": \"2023-01-01T03:00:00.000Z\",\n\t\"developerId\": 2\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Error 404: ID não existe (body)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Projeto - developerId not found\",\n\t\"description\": \"Projeto front-end\",\n\t\"repository\": \"url2.com.br\",\n\t\"startDate\": \"2022-12-01\",\n\t\"developerId\": 999\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/projects",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"projects"
+									]
+								},
+								"description": "# Descrição\n\n* O objeto não deve ser criado.\n* O status code deve ser **404 NOT FOUND**.\n* O retorno deve ser:\n\n```json\n{\n\t\"message\": \"Developer not found\"\n}\n```"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GET projects/:id",
+					"item": [
+						{
+							"name": "Success 200: Project 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ _.baseUrl }}/projects/1",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"projects",
+										"1"
+									]
+								},
+								"description": "# Descrição\n\n* O retorno deve ser um objeto.\n* O status code deve ser **200 OK**.\n* O retorno deve ser:\n\n```json\n{\n\t\"projectId\": 1,\n\t\"projectName\": \"Project 1\",\n\t\"projectDescription\": \"Projeto backend\",\n\t\"projectRepository\": \"url.com.br\",\n\t\"projectStartDate\": \"2022-12-01T03:00:00.000Z\",\n\t\"projectEndDate\": null,\n\t\"projectDeveloperName\": \"Ugo Roveda\"\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Success 200: Project 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ _.baseUrl }}/projects/2",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"projects",
+										"2"
+									]
+								},
+								"description": "# Descrição\n\n* O retorno deve ser um objeto.\n* O status code deve ser **200 OK**.\n* O retorno deve ser:\n\n```json\n{\n\t\"projectId\": 2,\n\t\"projectName\": \"Project 2\",\n\t\"projectDescription\": \"Projeto backend\",\n\t\"projectRepository\": \"url.com.br\",\n\t\"projectStartDate\": \"2022-12-01T03:00:00.000Z\",\n\t\"projectEndDate\": \"2023-01-01T03:00:00.000Z\",\n\t\"projectDeveloperName\": \"Kenzinho\"\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Error 404: ID não existe",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ _.baseUrl }}/projects/999",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"projects",
+										"999"
+									]
+								},
+								"description": "# Descrição\n\n* O retorno deve ser um objeto.\n* O status code deve ser **404 NOT FOUND**.\n* O retorno deve ser:\n\n```json\n{\n\t\"message\": \"Project not found.\"\n}\n```"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PATCH projects/:id",
+					"item": [
+						{
+							"name": "Success 200: Project 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Novo nome\",\n  \"description\": \"Nova descrição\",\n  \"repository\": \"novaurl.com.br\",\n  \"startDate\": \"2022-11-13\",\n  \"developerId\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/projects/1",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"projects",
+										"1"
+									]
+								},
+								"description": "# Descrição\n\n* O *project* deve ser atualizado.\n* O status code deve ser **200 OK**.\n* O retorno deve ser:\n\n```json\n{\n\t\"id\": 1,\n\t\"name\": \"Novo nome\",\n\t\"description\": \"Nova descrição\",\n\t\"repository\": \"novaurl.com.br\",\n\t\"startDate\": \"2022-11-13T03:00:00.000Z\",\n\t\"endDate\": null,\n\t\"developerId\": 2\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Error 404: ID não existe",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"description\": \"Nova descrição\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/projects/999",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"projects",
+										"999"
+									]
+								},
+								"description": "# Descrição\n\n* O *project* não deve ser atualizado.\n* O status code deve ser **404 NOT FOUND**.\n* O retorno deve ser:\n\n```json\n{\n\t\"message\": \"Project not found.\"\n}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Error 404: developerId não existe (body)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"developerId\": 999\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ _.baseUrl }}/projects/1",
+									"host": [
+										"{{ _.baseUrl }}"
+									],
+									"path": [
+										"projects",
+										"1"
+									]
+								},
+								"description": "# Descrição\n\n* O *project* não deve ser atualizado.\n* O status code deve ser **404 NOT FOUND**.\n* O retorno deve ser:\n\n```json\n{\n\t\"message\": \"Developer not found.\"\n}\n```"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:3000"
+		}
+	]
+}
